@@ -11,7 +11,7 @@ const Navbar = () => {
             title: `Logout Success`,
             description: "Logged out Successfully.",
             status: "success",
-            duration: 9000,
+            duration: 2000,
             isClosable: true,
           });
         navigate("/");
@@ -27,6 +27,13 @@ const Navbar = () => {
       <Button colorScheme="blue" onClick={() => navigate("/eventlist")}>
         All Event
       </Button>
+      <Button colorScheme="blue" onClick={() => navigate("/eventjoin")}>
+        Event Joined/Requested
+      </Button>
+      <Button colorScheme="blue" onClick={() => navigate("/myevent")}>
+        My Events
+      </Button>
+  
       <Button colorScheme="blue" onClick={handlelogout}>
         Logout
       </Button>

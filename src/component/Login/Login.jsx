@@ -39,7 +39,7 @@ function Login() {
             title: `${res.data.msg}`,
             description: "Logged in Successfully.",
             status: "success",
-            duration: 9000,
+            duration: 2000,
             isClosable: true,
           });
           navigate("/eventlist");
@@ -51,7 +51,7 @@ function Login() {
           title: `${e.code}`,
           description: `${e.message}`,
           status: "warning",
-          duration: 9000,
+          duration: 2000,
           isClosable: true,
         });
       });

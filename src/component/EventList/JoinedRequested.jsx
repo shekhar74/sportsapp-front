@@ -4,19 +4,31 @@ import Navbar from "../Navbar/Navbar";
 import {
   SimpleGrid,
   Box,
-  Button,
-  Center
+  Heading,
+  Center,useToast
 } from "@chakra-ui/react";
-import {useNavigate} from 'react-router-dom'
 
-function EventList() {
+function JoinedRequested() {
   const [data, setData] = useState([]);
+let token=localStorage.getItem("auth-token")
+const toast = useToast();
 
-  const Navigate= useNavigate()
 
   useEffect(() => {
+    if(!token)
+  {  toast({
+        title: `${"Login First"}`,
+        description: "Login To View Event List.",
+        status: "warning",
+        duration: 2000,
+        isClosable: true,
+      })}
     axios
-      .get("http://localhost:6500/event/all")
+      .get("http://localhost:6500/event/eventcheck",{
+        headers:{
+            "auth-token":token
+        }
+      })
       .then((res) => setData(res.data));
   }, []);
   console.log(data, "data");
@@ -24,6 +36,7 @@ function EventList() {
   return (
     <div style={{ width: "90%", margin: "auto" }}>
       <Navbar />
+      <Center><Heading>List of Event Joined OR Requested To Join</Heading></Center>
       <SimpleGrid column={[1, 2, 3]}>
         {data &&
           data.map((e, i) => {
@@ -78,8 +91,7 @@ function EventList() {
                     </Box>
                   </Box>
                 </Box>
-                <Center><Button colorScheme="green" onClick={()=>Navigate(`/eventplayers/${e._id}`,console.log(e._id))} >Player List</Button>
-                <Button colorScheme="yellow" onClick={()=>Navigate(`/event/${e._id}`,console.log(e._id))} >View Details</Button></Center>
+
               </Box>
             );
           })}
@@ -88,4 +100,4 @@ function EventList() {
   );
 }
 
-export default EventList;
+export default JoinedRequested;

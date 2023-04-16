@@ -31,7 +31,7 @@ function EventDetail() {
         title: `${"Login First"}`,
         description: "Login To Join.",
         status: "warning",
-        duration: 9000,
+        duration: 2000,
         isClosable: true,
       });
     }
@@ -48,7 +48,7 @@ function EventDetail() {
             title: `Request Sent`,
             description: `${res.data.msg}`,
             status: "success",
-            duration: 9000,
+            duration: 2000,
             isClosable: true,
           });
         }
@@ -59,7 +59,7 @@ function EventDetail() {
           title: `${e.code}`,
           description: `${e.response.data.msg}`,
           status: "warning",
-          duration: 9000,
+          duration: 2000,
           isClosable: true,
         });
       });

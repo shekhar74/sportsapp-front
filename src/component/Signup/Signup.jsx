@@ -39,7 +39,7 @@ function Signup() {
             title: `${res.data.msg}`,
             description: "We've created your Account.",
             status: "success",
-            duration: 9000,
+            duration: 2000,
             isClosable: true,
           });
           navigate("/");
@@ -50,7 +50,7 @@ function Signup() {
           title: `${e.code}`,
           description: `${e.message}`,
           status: "warning",
-          duration: 9000,
+          duration: 2000,
           isClosable: true,
         });
       });
