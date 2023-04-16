@@ -5,7 +5,8 @@ import {
   SimpleGrid,
   Box,
   Button,
-  Center
+  Center,
+  Heading
 } from "@chakra-ui/react";
 import {useNavigate} from 'react-router-dom'
 
@@ -19,12 +20,13 @@ function EventList() {
       .get("http://localhost:6500/event/all")
       .then((res) => setData(res.data));
   }, []);
-  console.log(data, "data");
+  // console.log(data, "data");
 
   return (
     <div style={{ width: "90%", margin: "auto" }}>
       <Navbar />
-      <SimpleGrid column={[1, 2, 3]}>
+      <Center><Heading>All Event List</Heading></Center>
+      <SimpleGrid mt={5} columns={[1,2,3]} spacing={10}>
         {data &&
           data.map((e, i) => {
             return (
@@ -74,11 +76,11 @@ function EventList() {
                       textTransform="uppercase"
                       ml="2"
                     >
-                      Date {e.date.split("T").reverse()[1]}
+                      Date {e.date}
                     </Box>
                   </Box>
                 </Box>
-                <Center><Button colorScheme="green" onClick={()=>Navigate(`/eventplayers/${e._id}`,console.log(e._id))} >Player List</Button>
+                <Center gap={5} mb={2}><Button colorScheme="green" onClick={()=>Navigate(`/eventplayers/${e._id}`,console.log(e._id))} >Player List</Button>
                 <Button colorScheme="yellow" onClick={()=>Navigate(`/event/${e._id}`,console.log(e._id))} >View Details</Button></Center>
               </Box>
             );

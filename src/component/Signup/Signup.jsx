@@ -7,6 +7,8 @@ import {
   Button,
   Input,
   useToast,
+  Center,
+  Heading,
 } from "@chakra-ui/react";
 
 import { useNavigate } from "react-router-dom";
@@ -57,9 +59,9 @@ function Signup() {
   };
   return (
     <div style={{ width: "50%", margin: "auto" }}>
-      <h1 style={{ width: "50%", margin: "auto", textAlign: "center" }}>
-        Signup
-      </h1>
+      <Center>
+        <Heading>Signup</Heading>
+      </Center>
       <FormControl isRequired>
         <FormLabel>Username</FormLabel>
         <Input
@@ -83,9 +85,14 @@ function Signup() {
           placeholder="Enter Password"
         />
 
-        <Button type="submit" onClick={handlesubmit}>
-          Signup
-        </Button>
+        <Center gap={5}>
+          <Button colorScheme="green" type="submit" onClick={handlesubmit}>
+            Signup
+          </Button>
+          <Button colorScheme="blue" type="submit" onClick={()=>{navigate("/")}}>
+            Login Page
+          </Button>
+        </Center>
       </FormControl>
     </div>
   );

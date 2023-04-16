@@ -134,7 +134,7 @@ function EventDetail() {
                       textTransform="uppercase"
                       ml="2"
                     >
-                      Date {e.date.split("T").reverse()[1]} &bull; Time {e.time}{" "}
+                      Date {e.date} &bull; Time {e.time}{" "}
                       hrs
                     </Box>
                   </Box>

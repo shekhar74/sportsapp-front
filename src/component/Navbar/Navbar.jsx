@@ -18,14 +18,17 @@ const Navbar = () => {
   }
   return (
     <div className={style.Navbar}>
-      <Button colorScheme="blue" onClick={() => navigate("/")}>
+      <Button colorScheme="orange" onClick={() => navigate("/")}>
         Login
       </Button>
-      <Button colorScheme="blue" onClick={() => navigate("/signup")}>
+      <Button colorScheme="orange" onClick={() => navigate("/signup")}>
         Register
       </Button>
       <Button colorScheme="blue" onClick={() => navigate("/eventlist")}>
         All Event
+      </Button>
+      <Button colorScheme="green" onClick={() => navigate("/create")}>
+        Create Event
       </Button>
       <Button colorScheme="blue" onClick={() => navigate("/eventjoin")}>
         Event Joined/Requested
@@ -33,8 +36,7 @@ const Navbar = () => {
       <Button colorScheme="blue" onClick={() => navigate("/myevent")}>
         My Events
       </Button>
-  
-      <Button colorScheme="blue" onClick={handlelogout}>
+      <Button colorScheme="red" onClick={handlelogout}>
         Logout
       </Button>
     </div>

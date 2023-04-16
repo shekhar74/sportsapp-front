@@ -87,7 +87,7 @@ const toast = useToast();
                       textTransform="uppercase"
                       ml="2"
                     >
-                      Date {e.date.split("T").reverse()[1]}
+                      Date {e.date}
                     </Box>
                   </Box>
                 </Box>

@@ -7,6 +7,8 @@ import EventDetail from "./component/EventList/EventDetail";
 import EventPlayers from "./component/EventList/EventPlayers";
 import JoinedRequested from "./component/EventList/JoinedRequested";
 import MyEvents from "./component/EventList/MyEvents";
+import CreateEvent from "./component/EventList/CreateEvent";
+import Error from "./component/Error/Error";
 
 function App() {
   return (
@@ -18,6 +20,8 @@ function App() {
       <Route path="/eventplayers/:id" element={<EventPlayers/>}/>
       <Route path="/eventjoin" element={<JoinedRequested/>}/>
       <Route path="/myevent" element={<MyEvents/>}/>
+      <Route path="/create" element={<CreateEvent/>}/>
+      <Route path="*" element={<Error/>}/>
     </Routes>
   );
 }

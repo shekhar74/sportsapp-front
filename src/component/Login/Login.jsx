@@ -6,6 +6,8 @@ import {
   Button,
   Input,
   useToast,
+  Center,
+  Heading,
 } from "@chakra-ui/react";
 import axios from "axios";
 
@@ -32,7 +34,7 @@ function Login() {
         password: data.password,
       })
       .then((res) => {
-        console.log(res.data)
+        console.log(res.data);
         if (res.data.token) {
           localStorage.setItem("auth-token", res.data.token);
           toast({
@@ -58,16 +60,9 @@ function Login() {
   };
   return (
     <div style={{ width: "50%", margin: "auto" }}>
-      <h1
-        style={{
-          width: "50%",
-          margin: "auto",
-          textAlign: "center",
-          fontSize: "15px",
-        }}
-      >
-        Login
-      </h1>
+      <Center>
+        <Heading size={"lg"}>Login</Heading>
+      </Center>
       <FormControl isRequired>
         <FormLabel>Username</FormLabel>
         <Input
@@ -84,9 +79,14 @@ function Login() {
           placeholder="Enter Password"
         />
 
-        <Button type="submit" onClick={handlesubmit}>
-          Login
-        </Button>
+        <Center gap={5}>
+          <Button colorScheme="green" type="submit" onClick={handlesubmit}>
+            Login
+          </Button>
+          <Button colorScheme="blue" type="submit" onClick={()=>{navigate("/signup")}}>
+            Signup Page
+          </Button>
+        </Center>
       </FormControl>
     </div>
   );

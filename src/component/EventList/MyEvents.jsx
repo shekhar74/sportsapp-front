@@ -43,7 +43,7 @@ const toast=useToast();
   const handleaccept=(re,e)=>{
     let eventid=e._id;
     let participant=re._id
-    console.log(eventid,participant )
+    // console.log(eventid,participant )
     // console.log("like",e._id)
     axios.put(`http://localhost:6500/event/${eventid}/requests/${participant}`,{"accepted":"true"},{headers:{
         "auth-token":token
@@ -67,7 +67,7 @@ const toast=useToast();
 const handlereject=(re,e)=>{
     let eventid=e._id;
     let participant=re._id
-    console.log(eventid,participant )
+    // console.log(eventid,participant )
     // console.log("like",e._id)
     axios.put(`http://localhost:6500/event/${eventid}/requests/${participant}`,{"accepted":"false"},{headers:{
         "auth-token":token
@@ -87,7 +87,7 @@ const handlereject=(re,e)=>{
         isClosable: true,
       })})
 }
-  console.log(data, "data");
+  // console.log(data, "data");
 
   return (
     <div style={{ width: "90%", margin: "auto" }}>
@@ -143,7 +143,7 @@ const handlereject=(re,e)=>{
                       textTransform="uppercase"
                       ml="2"
                     >
-                      Date {e.date.split("T").reverse()[1]}
+                      Date {e.date} Time {e.time}
                     </Box>
                   </Box>
                 </Box>

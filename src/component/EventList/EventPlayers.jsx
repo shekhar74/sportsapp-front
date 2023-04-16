@@ -20,7 +20,7 @@ function EventPlayers() {
   let token = localStorage.getItem("auth-token");
   const toast = useToast();
   useEffect(() => {
-    console.log(id,token,"token")
+    // console.log(id,token,"token")
     axios.get(`http://localhost:6500/event/${id}/players`,{
         headers: {
           'auth-token': token,
@@ -41,7 +41,7 @@ if (loading) {
     <div>
       <Center>
         <Heading size="lg">Loading Data From Render Server...</Heading>
-        {console.log("spinning")}
+        {/* {console.log("spinning")} */}
         <Spinner
           thickness="4px"
           speed="0.65s"
