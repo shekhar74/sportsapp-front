@@ -29,7 +29,7 @@ function Login() {
     // console.log(data)
     e.preventDefault();
     axios
-      .post("http://localhost:6500/user/login", {
+      .post("https://sportsapp-6dg0.onrender.com/user/login", {
         username: data.username,
         password: data.password,
       })

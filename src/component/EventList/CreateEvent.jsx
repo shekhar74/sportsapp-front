@@ -45,7 +45,7 @@ function CreateEvent() {
     }
     // console.log(data);
     e.preventDefault();
-    axios.post("http://localhost:6500/event/create",{
+    axios.post("https://sportsapp-6dg0.onrender.com/event/create",{
          name:data.name,
     description:data.description,
     date:data.date,

@@ -24,7 +24,7 @@ let token=localStorage.getItem("auth-token")
 const toast=useToast();
   useEffect(() => {
     axios
-      .get("http://localhost:6500/event/organize",{
+      .get("https://sportsapp-6dg0.onrender.com/event/organize",{
         headers:{
             "auth-token":token
         }
@@ -45,7 +45,7 @@ const toast=useToast();
     let participant=re._id
     // console.log(eventid,participant )
     // console.log("like",e._id)
-    axios.put(`http://localhost:6500/event/${eventid}/requests/${participant}`,{"accepted":"true"},{headers:{
+    axios.put(`https://sportsapp-6dg0.onrender.com/event/${eventid}/requests/${participant}`,{"accepted":"true"},{headers:{
         "auth-token":token
     }}).then(res=>{
         setFlag(!flag)
@@ -69,7 +69,7 @@ const handlereject=(re,e)=>{
     let participant=re._id
     // console.log(eventid,participant )
     // console.log("like",e._id)
-    axios.put(`http://localhost:6500/event/${eventid}/requests/${participant}`,{"accepted":"false"},{headers:{
+    axios.put(`https://sportsapp-6dg0.onrender.com/event/${eventid}/requests/${participant}`,{"accepted":"false"},{headers:{
         "auth-token":token
     }}).then((res)=> {
         setFlag(!flag)
@@ -93,7 +93,7 @@ const handlereject=(re,e)=>{
     <div style={{ width: "90%", margin: "auto" }}>
       <Navbar />
       <Center><Heading>Event I Am Organizing</Heading></Center>
-      <SimpleGrid column={[1, 2, 3]}>
+      <SimpleGrid columns={[1, 2, 3]}>
         {data &&
           data.map((e, i) => {
             return (

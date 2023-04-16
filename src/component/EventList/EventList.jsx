@@ -17,7 +17,7 @@ function EventList() {
 
   useEffect(() => {
     axios
-      .get("http://localhost:6500/event/all")
+      .get("https://sportsapp-6dg0.onrender.com/event/all")
       .then((res) => setData(res.data));
   }, []);
   // console.log(data, "data");

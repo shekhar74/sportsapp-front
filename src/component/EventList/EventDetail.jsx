@@ -20,7 +20,7 @@ function EventDetail() {
 
   useEffect(() => {
     // console.log(id);
-    axios.get(`http://localhost:6500/event/${id}`).then((res) => {
+    axios.get(`https://sportsapp-6dg0.onrender.com/event/${id}`).then((res) => {
       setdata(res.data);
     });
   }, [id]);
@@ -36,7 +36,7 @@ function EventDetail() {
       });
     }
     axios
-      .post(`http://localhost:6500/event/${id}/join`,null,{
+      .post(`https://sportsapp-6dg0.onrender.com/event/${id}/join`,null,{
         headers: {
           'auth-token': token,
         }})

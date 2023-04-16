@@ -24,7 +24,7 @@ const toast = useToast();
         isClosable: true,
       })}
     axios
-      .get("http://localhost:6500/event/eventcheck",{
+      .get("https://sportsapp-6dg0.onrender.com/event/eventcheck",{
         headers:{
             "auth-token":token
         }

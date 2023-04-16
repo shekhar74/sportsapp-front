@@ -21,7 +21,7 @@ function EventPlayers() {
   const toast = useToast();
   useEffect(() => {
     // console.log(id,token,"token")
-    axios.get(`http://localhost:6500/event/${id}/players`,{
+    axios.get(`https://sportsapp-6dg0.onrender.com/event/${id}/players`,{
         headers: {
           'auth-token': token,
         }}).then((res) => setData(res.data)).catch((e)=>toast({

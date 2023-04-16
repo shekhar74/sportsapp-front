@@ -29,7 +29,7 @@ function Signup() {
     // console.log(data)
     e.preventDefault();
     axios
-      .post("http://localhost:6500/user/register", {
+      .post("https://sportsapp-6dg0.onrender.com/user/register", {
         username: data.username,
         email: data.email,
         password: data.password,
