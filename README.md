@@ -11,7 +11,7 @@ In the project directory, you can run:
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-##SnapShot of Applications
+##SnapShots of Application
 
 ![sports all event list](https://user-images.githubusercontent.com/103572327/233634485-f996a0e1-5163-4543-8f21-a61516ad82ba.png)
 ![event details](https://user-images.githubusercontent.com/103572327/233634471-171f5cb1-091c-4f7d-8a37-059ba89811ef.png)
